@@ -75,3 +75,4 @@ if [[ "$1" == "--dmg" ]]; then
   fi
   echo "✓ Paylaşım dosyası: $DMG"
 fi
+

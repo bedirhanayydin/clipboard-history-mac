@@ -40,14 +40,15 @@ Son kopyaladığın 10 veya 20 şeyi (metin ve resim) saklayan, menü çubuğund
 ### Homebrew ile (önerilen)
 
 ```bash
-brew install --cask bedirhanayydin/tap/pano-gecmisi
+brew tap bedirhanayydin/clipboard-history-mac https://github.com/bedirhanayydin/clipboard-history-mac
+brew install --cask pano-gecmisi
 ```
 
-Uygulamayı aç; gerisini karşılama penceresi gösterir. Güncellemek için `brew upgrade --cask pano-gecmisi`.
+Uygulamayı aç; gerisini karşılama penceresi gösterir. Güncellemek için `brew upgrade --cask pano-gecmisi`, kaldırmak için `brew uninstall --cask pano-gecmisi`.
 
 ### DMG ile
 
-1. [Releases](https://github.com/bedirhanayydin/clipboard-history-mac/releases) sayfasından son `PanoGecmisi-x.y.dmg` dosyasını indir.
+1. [`dist/`](dist) klasöründeki `PanoGecmisi-x.y.dmg` dosyasını indir (dosyaya tıkla → **Download raw file**).
 2. DMG'yi aç, **Pano Geçmişi**'ne çift tıkla.
 3. macOS "doğrulanamadı" derse (sadece ilk seferde): **Bitti** → Sistem Ayarları → Gizlilik ve Güvenlik → en altta **Yine de Aç**.
 4. Gerisini uygulama kendisi gösterir: Uygulamalar klasörüne taşıma, yapıştırma izni, otomatik başlatma.
@@ -97,6 +98,17 @@ SIGN_ID="Developer ID Application: Ad Soyad (TAKIMID)" NOTARY_PROFILE="profil" .
 | `MenuBarIcon.swift` | Menü çubuğu ikonu |
 | `tools/make_icon.swift` | Uygulama ikonunu üretir |
 | `tools/screenshots.sh` | README ekran görüntülerini örnek verilerle üretir |
+| `release.sh` | Yeni sürümü yayına hazırlar (DMG → `dist/`, Homebrew tarifi güncellenir) |
+| `Casks/pano-gecmisi.rb` | Homebrew tarifi |
+| `dist/` | Yayındaki DMG |
+
+## Yeni sürüm yayınlama
+
+1. `build.sh` içindeki `VERSION` değerini artır.
+2. `./release.sh` çalıştır.
+3. `git add -A && git commit -m "x.y" && git push`
+
+Brew kullananlar `brew upgrade --cask pano-gecmisi` ile yeni sürümü alır.
 
 ---
 
