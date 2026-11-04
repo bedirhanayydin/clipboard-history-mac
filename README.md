@@ -4,6 +4,10 @@ Son kopyaladığın 10 veya 20 şeyi (metin ve resim) saklayan, menü çubuğund
 
 *A small menu bar app that keeps your last 10 or 20 copied items (text and images). Press **⌃⌘V** anywhere, pick one, and it is pasted right where you are typing.*
 
+<p align="center">
+  <img src="docs/screenshots/picker.png" alt="⌃⌘V ile açılan seçici pencere" width="760">
+</p>
+
 ## Özellikler
 
 - **⌃⌘V** ile yazı imlecinin hemen altında açılan, Liquid Glass görünümlü seçici pencere
@@ -16,7 +20,32 @@ Son kopyaladığın 10 veya 20 şeyi (metin ve resim) saklayan, menü çubuğund
 - Değiştirilebilir kısayol, Mac açılınca otomatik başlatma
 - Her şey sadece senin Mac'inde saklanır, hiçbir yere gönderilmez
 
+## Ekran görüntüleri
+
+| Sık kullanılanlar ve resimler | Uygulamaya göre filtre (`safari:swift`) |
+| --- | --- |
+| ![Sık kullanılanlar](docs/screenshots/favorites.png) | ![Filtre](docs/screenshots/filter.png) |
+
+| Ayarlar | Hariç tutulan uygulamalar |
+| --- | --- |
+| ![Ayarlar](docs/screenshots/settings.png) | ![Hariç tutulanlar](docs/screenshots/excluded.png) |
+
+<p align="center">
+  <img src="docs/screenshots/welcome.png" alt="İlk açılış karşılama penceresi" width="420"><br>
+  <sub>İlk açılışta izinleri adım adım soran karşılama penceresi</sub>
+</p>
+
 ## Kurulum
+
+### Homebrew ile (önerilen)
+
+```bash
+brew install --cask bedirhanayydin/tap/pano-gecmisi
+```
+
+Uygulamayı aç; gerisini karşılama penceresi gösterir. Güncellemek için `brew upgrade --cask pano-gecmisi`.
+
+### DMG ile
 
 1. [Releases](https://github.com/bedirhanayydin/clipboard-history-mac/releases) sayfasından son `PanoGecmisi-x.y.dmg` dosyasını indir.
 2. DMG'yi aç, **Pano Geçmişi**'ne çift tıkla.
@@ -67,6 +96,7 @@ SIGN_ID="Developer ID Application: Ad Soyad (TAKIMID)" NOTARY_PROFILE="profil" .
 | `HotKey.swift` | Global kısayol |
 | `MenuBarIcon.swift` | Menü çubuğu ikonu |
 | `tools/make_icon.swift` | Uygulama ikonunu üretir |
+| `tools/screenshots.sh` | README ekran görüntülerini örnek verilerle üretir |
 
 ---
 
