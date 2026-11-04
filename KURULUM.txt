@@ -1,0 +1,14 @@
+PANO GEÇMİŞİ — KURULUM
+
+1) "Pano Geçmişi"ne çift tıkla.
+
+2) macOS "doğrulanamadı" derse (sadece ilk seferde):
+   "Bitti"ye bas → Sistem Ayarları → Gizlilik ve Güvenlik → en altta
+   "Yine de Aç"a bas → parolanı gir.
+
+Gerisini uygulama kendisi soracak: Uygulamalar klasörüne taşımayı,
+yapıştırma iznini ve Mac açılınca başlamayı tek tek gösterir.
+
+Kullanım: bir yerde yazarken ⌃⌘V (Control + Command + V).
+
+Bedirhan Aydın
