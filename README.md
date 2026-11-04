@@ -41,8 +41,11 @@ Son kopyaladığın 10 veya 20 şeyi (metin ve resim) saklayan, menü çubuğund
 
 ```bash
 brew tap bedirhanayydin/clipboard-history-mac https://github.com/bedirhanayydin/clipboard-history-mac
+brew trust bedirhanayydin/clipboard-history-mac
 brew install --cask pano-gecmisi
 ```
+
+`brew trust` satırı bir kere gerekir: Homebrew, resmi olmayan depolardan kurulumdan önce onay ister.
 
 Uygulamayı aç; gerisini karşılama penceresi gösterir. Güncellemek için `brew upgrade --cask pano-gecmisi`, kaldırmak için `brew uninstall --cask pano-gecmisi`.
 
