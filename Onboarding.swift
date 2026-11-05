@@ -105,7 +105,7 @@ struct OnboardingView: View {
                          title: "Direkt yapıştırma izni",
                          detail: model.axTrusted
                             ? "İzin verildi."
-                            : "Açılan pencerede “Pano Geçmişi”nin yanındaki anahtarı aç. Parolanı isteyebilir.") {
+                            : "Açılan listede “Pano Geçmişi”nin anahtarını aç.\nZaten açık görünüyorsa: satırı seç, altındaki − ile kaldır, sonra tekrar “İzni Aç”a bas.") {
                     if !model.axTrusted {
                         Button("İzni Aç") { requestAccessibility() }
                             .buttonStyle(.borderedProminent)

@@ -180,3 +180,18 @@ enum TimeText {
 func fold(_ s: String) -> String {
     s.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: Locale(identifier: "tr_TR"))
 }
+
+/// Sorun giderme için kısa kayıtlar: ~/Library/Logs/PanoGecmisi.log
+enum DiagLog {
+    static let url = FileManager.default.homeDirectoryForCurrentUser
+        .appendingPathComponent("Library/Logs/PanoGecmisi.log")
+
+    static func write(_ s: String) {
+        let line = "\(ISO8601DateFormatter().string(from: Date()))  \(s)\n"
+        if let h = try? FileHandle(forWritingTo: url) {
+            h.seekToEndOfFile(); h.write(Data(line.utf8)); try? h.close()
+        } else {
+            try? Data(line.utf8).write(to: url)
+        }
+    }
+}

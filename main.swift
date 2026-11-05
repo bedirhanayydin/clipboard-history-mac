@@ -32,6 +32,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in self?.poll() }
 
+        // Tanılama: izin durumunu ~/Library/Logs/PanoGecmisi.log dosyasına yaz (değiştikçe)
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
+        DiagLog.write("açıldı v\(version) yol=\(Bundle.main.bundlePath) AX=\(AXIsProcessTrusted())")
+        var lastAX = AXIsProcessTrusted()
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+            let now = AXIsProcessTrusted()
+            if now != lastAX { DiagLog.write("AX değişti → \(now)"); lastAX = now }
+        }
+
         // İlk açılışta ya da izin kaybolduysa (ör. güncellemeden sonra) karşılama penceresi
         if !defaults.bool(forKey: "onboarded") || !AXIsProcessTrusted() {
             onboarding.show(shortcut: hotkeys.display)

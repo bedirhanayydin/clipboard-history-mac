@@ -1,6 +1,6 @@
 cask "pano-gecmisi" do
-  version "1.3"
-  sha256 "2aa9183b9a009857a9a536d4dcf483635fa435a3f369af48697f36f54d7b633b"
+  version "1.4"
+  sha256 "d1840fc38ae0237dcb411a7dfae20e79cde6a1ecd75075ee106e69a6633e177f"
 
   url "https://raw.githubusercontent.com/bedirhanayydin/clipboard-history-mac/main/dist/PanoGecmisi-#{version}.dmg"
   name "Pano Geçmişi"

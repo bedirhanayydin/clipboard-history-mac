@@ -6,7 +6,7 @@
 set -e
 cd "$(dirname "$0")"
 
-VERSION="1.3"
+VERSION="1.4"
 NAME="Pano Geçmişi"
 APP="build/$NAME.app"
 SOURCES=(main.swift Picker.swift Clip.swift Store.swift HotKey.swift Settings.swift MenuBarIcon.swift Onboarding.swift AppMover.swift)
@@ -45,7 +45,9 @@ EOF
 if [[ -n "$SIGN_ID" ]]; then
   codesign --force --options runtime --timestamp -s "$SIGN_ID" "$APP"
 else
-  codesign --force -s - "$APP"
+  # Kimliği her derlemede değişen özete değil paket adına bağla:
+  # böylece Erişilebilirlik izni güncellemelerden sonra da geçerli kalır.
+  codesign --force -s - -r='designated => identifier "com.bedirhan.panogecmisi"' "$APP"
 fi
 echo "✓ Derlendi: $APP"
 
